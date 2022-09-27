@@ -20,12 +20,6 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = new Vector2(1, 1);
             playerAni.SetBool("Move", true);
             transform.Translate(moveRight);
-            /* (Input.GetKeyDown(KeyCode.Z))
-            {
-                playerAni.SetBool("Move", false);
-                playerAni.SetBool("Jump",true);
-                rb.velocity = Vector2.up * DATA.jumpPower;
-            }*/
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && DATA.isDie == false && DATA.esc == false)
         {
@@ -33,23 +27,10 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             playerAni.SetBool("Move", true);
             transform.Translate(moveLeft);
-            /*if (Input.GetKeyDown(KeyCode.Z))
-            {
-                playerAni.SetBool("Move", false);
-                playerAni.SetBool("Jump", true);
-                rb.velocity = Vector2.up * DATA.jumpPower;
-            }*/
         }
-        /*if (Input.GetKeyDown(KeyCode.Z))
-        {
-            playerAni.SetBool("Move", false);
-            playerAni.SetBool("Jump", true);
-            rb.velocity = Vector2.up * DATA.jumpPower;
-        }*/
         else
         {
             playerAni.SetBool("Move", false);
-            playerAni.SetBool("Jump", false);
         }
     }
 }
