@@ -12,25 +12,27 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        DATA.playerDie = false;
+        playerAni.SetBool("Die", false);
     }
 
     private void Update()
     {
         // jump
-        if (Input.GetButtonDown("Jump") && !playerAni.GetBool("Jump"))
+        if (Input.GetButtonDown("Jump") && !playerAni.GetBool("Jump") && DATA.playerDie == false)
         {
             rb.AddForce(Vector2.up * DATA.jumpPower, ForceMode2D.Impulse);
             playerAni.SetBool("Jump", true);
         }
 
         // move
-        if (Input.GetButtonUp("Horizontal"))
+        if (Input.GetButtonUp("Horizontal") && DATA.playerDie == false)
         {
             rb.velocity = new Vector2(rb.velocity.normalized.x * 0.5f, rb.velocity.y);
         }
 
         // turn
-        if (Input.GetButton("Horizontal"))
+        if (Input.GetButton("Horizontal") && DATA.playerDie == false)
         {
             sr.flipX = Input.GetAxisRaw("Horizontal") == -1;
         }
@@ -57,6 +59,12 @@ public class PlayerMove : MonoBehaviour
                     playerAni.SetBool("Jump", false);
                 }
             }
+        }
+
+        // die
+        if (DATA.playerDie == true)
+        {
+            playerAni.SetBool("Die", true);
         }
     }
 

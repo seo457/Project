@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    GameObject player;
+    // 플레이어 감지, x 눌렀을때
 
-    private void Awake()
+    bool on = false;
+
+    private void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (on == true && Input.GetKeyDown(KeyCode.X))
+        {
+            DATA.firstStage = false;
+            Debug.Log("X");
+        }
     }
-    private void OnTriggerStay2D(Collider2D other)
-    {
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            on = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            on = false;
+        }
     }
 }
