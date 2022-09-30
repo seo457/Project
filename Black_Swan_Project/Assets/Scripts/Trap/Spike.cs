@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Spike : MonoBehaviour
 {
+    private void Update()
+    {
+        if (DATA.stageNum > 1)
+        {
+            DATA.firstStage = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" && DATA.firstStage == true)
         {
-            DATA.playerDie = true;
             StartCoroutine(Death());
         }
         else if (other.gameObject.tag == "Player" && DATA.firstStage == false)
@@ -20,7 +27,8 @@ public class Spike : MonoBehaviour
     }
     IEnumerator Death()
     {
-        yield return new WaitForSeconds(0.5f);
+        DATA.playerDie = true;
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Stage01");
     }
 }

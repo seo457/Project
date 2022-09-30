@@ -13,7 +13,6 @@ public class Door : MonoBehaviour
         if (on == true && Input.GetKeyDown(KeyCode.X))
         {
             DATA.firstStage = false;
-            Debug.Log("X");
         }
     }
 

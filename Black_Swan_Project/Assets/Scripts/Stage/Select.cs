@@ -10,12 +10,4 @@ public class Select : MonoBehaviour
     {
         SceneManager.LoadScene("All");
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    
 }

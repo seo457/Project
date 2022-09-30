@@ -18,6 +18,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(DATA.stageNum);
+
         // jump
         if (Input.GetButtonDown("Jump") && !playerAni.GetBool("Jump") && DATA.playerDie == false)
         {
