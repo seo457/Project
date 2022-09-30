@@ -19,8 +19,10 @@ public class Spike : MonoBehaviour
         {
             StartCoroutine(Death());
         }
-        else if (other.gameObject.tag == "Player" && DATA.firstStage == false)
+        else if (other.gameObject.tag == "Player" && DATA.firstStage == false && !DATA.clear)
         {
+            Debug.Log("Clear!");
+            DATA.stageNum++;
             DATA.playerDie = true;
             DATA.clear = true;
         }

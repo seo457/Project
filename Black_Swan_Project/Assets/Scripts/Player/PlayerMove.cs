@@ -51,9 +51,9 @@ public class PlayerMove : MonoBehaviour
 
         // jump animation
         Debug.DrawRay(rb.position, Vector3.down, new Color(0, 1, 0));
-        if (rb.velocity.y < 0)
+        if (rb.velocity.y <= 0)
         {
-            RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector3.down, 1, LayerMask.GetMask("Ground"));
+            RaycastHit2D ground = Physics2D.BoxCast(transform.position, new Vector2(0.675f, 0.7711883f), 0, Vector2.down, .5f, LayerMask.GetMask("Ground"));
             if (ground.collider != null)
             {
                 if (ground.distance < 0.5f)

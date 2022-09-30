@@ -13,24 +13,13 @@ public class ChangeScene : MonoBehaviour
     IEnumerator SceneChanger()
     {
         yield return new WaitForSeconds(0.5f);
-        switch (Stage)
-        {
-            case 1:
-                SceneManager.LoadScene("Stage01");
-                break;
-            case 2:
-                SceneManager.LoadScene("Stage02");
-                break;
-            case 3:
-                SceneManager.LoadScene("Stage03");
-                break;
-            case 4:
-                SceneManager.LoadScene("Stage04");
-                break;
-            case 5:
-                SceneManager.LoadScene("Stage05");
-                break;
-        }
+
+        string suffix = $"{Stage}";
+        if (suffix.Length < 2)
+            suffix = '0' + suffix;
+
+        SceneManager.LoadScene("Stage" + suffix);
+
         DATA.clear = false;
     }
 }

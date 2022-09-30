@@ -5,5 +5,5 @@ public class DATA
     public static bool firstStage = true;
     public static bool playerDie = false;
     public static bool clear = false;
-    public static int stageNum = 0;
+    public static int stageNum = 1;
 }
