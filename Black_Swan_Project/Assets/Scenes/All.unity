@@ -2405,13 +2405,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be0158f9bfa50c4a897fbd329cfdc0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Btn01: {fileID: 681803406}
-  Btn02: {fileID: 1220455708}
-  Btn03: {fileID: 1589780702}
-  Btn04: {fileID: 1226118573}
-  Btn05: {fileID: 1560485274}
-  Btn06: {fileID: 1541509294}
-  Btn07: {fileID: 1685418803}
+  Btn01: {fileID: 0}
+  Btn02: {fileID: 0}
+  Btn03: {fileID: 0}
+  Btn04: {fileID: 0}
+  Btn05: {fileID: 0}
+  Btn06: {fileID: 0}
+  Btn07: {fileID: 0}
 --- !u!1 &784101113
 GameObject:
   m_ObjectHideFlags: 0

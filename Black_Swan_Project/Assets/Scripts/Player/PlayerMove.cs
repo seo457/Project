@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         // move
-        if (Input.GetButtonUp("Horizontal") && DATA.playerDie == false)
+        if (Input.GetButtonUp("Horizontal"))
         {
             rb.velocity = new Vector2(rb.velocity.normalized.x * 0.5f, rb.velocity.y);
         }
@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         // move animation
-        if (rb.velocity.normalized.x == 0)
+        if (Mathf.Abs(rb.velocity.x) < 0.3f)
         {
             playerAni.SetBool("Move", false);
         }
@@ -81,18 +81,20 @@ public class PlayerMove : MonoBehaviour
         {
             playerAni.SetBool("Die", true);
         }
+
+
+        float h = Input.GetAxisRaw("Horizontal");
+        rb.AddForce(Vector2.right * h, ForceMode2D.Impulse);
     }
 
     private void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        rb.AddForce(Vector2.right * h, ForceMode2D.Impulse);
 
-        if (rb.velocity.x > DATA.moveSpeed)
+        if (rb.velocity.x > DATA.moveSpeed && DATA.playerDie == false)
         {
             rb.velocity = new Vector2(DATA.moveSpeed, rb.velocity.y);   // move right
         }
-        else if (rb.velocity.x < -DATA.moveSpeed)
+        else if (rb.velocity.x < -DATA.moveSpeed && DATA.playerDie == false)
         {
             rb.velocity = new Vector2(-DATA.moveSpeed, rb.velocity.y);  // move left
         }

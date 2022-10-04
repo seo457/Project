@@ -1908,6 +1908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641378009397895356, guid: ac75533ecdaeedc4bab30c97407a7b5c, type: 3}
+      propertyPath: m_LinearDrag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8641378009397895358, guid: ac75533ecdaeedc4bab30c97407a7b5c, type: 3}
       propertyPath: m_RootOrder
       value: 1
