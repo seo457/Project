@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637998594962895855
-    m_Hash: 186702577
+      ticks: 637997601357232244
+    m_Hash: 3566191900
   m_LockFileStatus:
     m_FilePath: C:/Users/USER/Desktop/Project/Black_Swan_Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637998594962895855
-    m_Hash: 3631236742
+      ticks: 637997601597965733
+    m_Hash: 2274178205
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

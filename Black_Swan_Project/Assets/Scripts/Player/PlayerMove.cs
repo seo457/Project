@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
     public Animator playerAni;
     Rigidbody2D rb;
     SpriteRenderer sr;
+
+    int Stage = DATA.stageNum;
 
     private void Start()
     {
@@ -19,6 +22,16 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         Debug.Log(DATA.stageNum);
+
+        // restart
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            string suffix = $"{Stage}";
+            if (suffix.Length < 2)
+                suffix = '0' + suffix;
+
+            SceneManager.LoadScene("Stage" + suffix);
+        }
 
         // jump
         if (Input.GetButtonDown("Jump") && !playerAni.GetBool("Jump") && DATA.playerDie == false)
