@@ -6,4 +6,6 @@ public class DATA
     public static bool playerDie = false;
     public static bool clear = false;
     public static int stageNum = 1;
+
+    public static bool esc = false;
 }
